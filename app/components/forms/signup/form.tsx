@@ -29,7 +29,7 @@ export default function SignupForm() {
     setIsLoading(true);
     setAuthError(null);
 
-    const validations: ZodError = schema.safeParse({ email, password }).error;
+    const validations: ZodError = (schema.safeParse({ email, password }) as {error: ZodError}).error;
 
     if (validations) {
       validations.errors.map((error) => {
@@ -56,10 +56,11 @@ export default function SignupForm() {
       body: JSON.stringify({ email, password }),
     });
 
+    const body = await response.json();
     if (response.ok) {
       router.push("/auth/signin");
     } else {
-      setAuthError(response.messaage);
+      setAuthError(body.message);
     }
     setIsLoading(false);
   }

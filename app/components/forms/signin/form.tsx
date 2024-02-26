@@ -25,7 +25,7 @@ export default function SigninForm() {
     const email = formData.get("email");
     const password = formData.get("password");
 
-    const validations: ZodError = schema.safeParse({ email, password }).error;
+    const validations: ZodError = (schema.safeParse({ email, password }) as {error: ZodError}).error;
 
     if (validations) {
       validations.errors.map((error) => {
@@ -94,7 +94,7 @@ export default function SigninForm() {
         </div>
         <div className="flex justify-center">
           <Link href="/auth/signup" className="min-w-24 max-w-96 text-sm text-blue-400">
-            Don't have an account? Sign up
+            Don&apos;t have an account? Sign up
           </Link>
         </div>
       </form>
