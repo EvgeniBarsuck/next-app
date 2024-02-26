@@ -19,7 +19,7 @@ export default function RootLayout({
       <head>
         <Script src="https://cdn.tailwindcss.com"/>
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}><script>0</script>{children}</body>
     </html>
   );
 }
