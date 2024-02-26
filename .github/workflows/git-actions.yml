@@ -4,14 +4,14 @@ on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-      steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20.x'
-      - name: Install dependencies
-        run: yarn
-      - name: ran project
-        run: yarn dev
+    steps:
+    - uses: actions/checkout@v4
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20.x'
+    - name: Install dependencies
+      run: yarn
+    - name: ran project
+      run: yarn dev
 
