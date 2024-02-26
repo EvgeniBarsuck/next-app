@@ -1,6 +1,5 @@
 import { initializeApp } from 'firebase/app';
 
-console.log("🚀 ~ process.env:", process.env)
 export const firebaseApp = initializeApp({
     apiKey: process.env.FIREBASE_API_KEY,
     authDomain: process.env.FIREBASE_AUTH_DOMAIN,
