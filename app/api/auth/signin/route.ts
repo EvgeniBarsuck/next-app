@@ -1,7 +1,7 @@
-'use server'
-
 import { signIn } from "@/app/lib/firebase/auth/signin";
 import { NextResponse } from "next/server";
+
+export const dynamic = 'force-static'
 
 export async function POST(req: any) {
   const body = await req.json();
