@@ -1,9 +1,12 @@
 import { signUp } from "@/app/lib/firebase/auth/signup";
 import { NextResponse } from "next/server";
 
+export const dynamic = 'force-static';
+
 export async function POST(req: any) {
+  const body = await req.json();
+
   try {
-    const body = await req.json();
     const { email, password } = body;
 
     await signUp(email, password);
