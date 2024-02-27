@@ -1,3 +1,5 @@
+'use server'
+
 import { signIn } from "@/app/lib/firebase/auth/signin";
 import { NextResponse } from "next/server";
 
