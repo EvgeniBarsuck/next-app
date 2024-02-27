@@ -11,11 +11,14 @@ const schema = z.object({
   password: z.string().min(6),
 });
 
+const styles = "form-absolute border-2 border-r-4 w-96 h-80 p-8";
+
 export default function SignupForm() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [emailError, setEmailError] = useState<string | null>(null);
   const [passwordError, setPasswordError] = useState<string | null>(null);
   const [authError, setAuthError] = useState<string | null>(null);
+  const [style, setStyle] = useState<string>(styles);
   const router = useRouter();
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -28,13 +31,13 @@ export default function SignupForm() {
     setPasswordError(null);
     setIsLoading(true);
     setAuthError(null);
+    setStyle(styles + " blur-sm");
 
     const validations: ZodError = (schema.safeParse({ email, password }) as {error: ZodError}).error;
 
     if (validations) {
       validations.errors.map((error) => {
         const formatError = zodMapperAuthForm(error);
-        console.log("🚀 ~ errors.errors.map ~ formatError:", formatError);
 
         if (formatError.field === "email") {
           setEmailError(formatError.message);
@@ -46,6 +49,7 @@ export default function SignupForm() {
       });
 
       setIsLoading(false);
+      setStyle(styles);
 
       return;
     }
@@ -62,12 +66,13 @@ export default function SignupForm() {
     } else {
       setAuthError(body.message);
     }
+    setStyle(styles);
     setIsLoading(false);
   }
 
   return (
     <div className="relative h-screen w-screen">
-      <form onSubmit={handleSubmit} className="form-absolute">
+      <form onSubmit={handleSubmit} className={style}>
         <div className="flex flex-col">
           <input
             name="email"
@@ -92,11 +97,11 @@ export default function SignupForm() {
           ) : null}
           {authError ? <p className="text-red-400 pl-7 ">{authError}</p> : null}
         </div>
-        <div className="flex justify-center">
-          <button className="min-w-24 max-w-96 text-sm">Sign up</button>
+        <div className="flex justify-center py-4">
+          <button className="min-w-24 max-w-96 m-4 border-2 border-r-4 p-1">Sign up</button>
         </div>
         <div className="flex justify-center">
-          <Link href="/auth/signin" className="text-blue-400 p-2">Already have account? Sing in</Link>
+          <Link href="/auth/signin" className="text-blue-400 test-sm min-w-24 max-w-96">Already have account? Sing in</Link>
         </div>
       </form>
     </div>

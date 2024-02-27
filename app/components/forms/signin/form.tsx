@@ -11,12 +11,15 @@ const schema = z.object({
   password: z.string().min(6),
 });
 
+const styles = "form-absolute border-2 border-r-4 w-96 h-80 p-8";
+
 export default function SigninForm() {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [emailError, setEmailError] = useState<string | null>(null);
   const [passwordError, setPasswordError] = useState<string | null>(null);
   const [authError, setAuthError] = useState<string | null>(null);
+  const [style, setStyle] = useState<string>(styles);
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -24,6 +27,12 @@ export default function SigninForm() {
     const formData = new FormData(event.currentTarget);
     const email = formData.get("email");
     const password = formData.get("password");
+
+    setEmailError(null);  
+    setPasswordError(null);
+    setIsLoading(true);
+    setAuthError(null);
+    setStyle(styles + " blur-sm");
 
     const validations: ZodError = (schema.safeParse({ email, password }) as {error: ZodError}).error;
 
@@ -41,6 +50,7 @@ export default function SigninForm() {
       });
 
       setIsLoading(false);
+      setStyle(styles);
 
       return;
     }
@@ -50,6 +60,8 @@ export default function SigninForm() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
     });
+
+    setStyle(styles);
 
     const body = await response.json();
 
@@ -62,7 +74,7 @@ export default function SigninForm() {
 
   return (
     <div className="relative h-screen w-screen">
-      <form onSubmit={handleSubmit} className="form-absolute">
+      <form onSubmit={handleSubmit} className={style}>  
         <div className="flex flex-col">
           <input
             name="email"
@@ -72,7 +84,7 @@ export default function SigninForm() {
             inputMode="email"
           />
           {emailError ? (
-            <p className="text-sm text-red-500">{emailError}</p>
+            <p className="text-sm pl-5 text-red-500">{emailError}</p>
           ) : null}
           <input
             name="password"
@@ -83,17 +95,17 @@ export default function SigninForm() {
             inputMode="text"
           />
           {passwordError ? (
-            <p className="text-sm text-red-500">{passwordError}</p>
+            <p className="text-sm pl-5 text-red-500">{passwordError}</p>
           ) : null}
-          {authError ? <p className="text-red-400 pl-7 ">{authError}</p> : null}
+          {authError ? <p className="text-red-400 pl-7 pt-4">{authError}</p> : null}
         </div>
-        <div className="flex justify-center">
-          <button type="submit" className="min-w-24 max-w-96 m-4">
+        <div className="flex justify-center py-4">
+          <button type="submit" className="min-w-24 max-w-96 m-4 border-2 border-r-4 p-1">
             Sign in
           </button>
-        </div>
+        </div>  
         <div className="flex justify-center">
-          <Link href="/auth/signup" className="min-w-24 max-w-96 text-sm text-blue-400">
+          <Link href="/auth/signup" className="text-blue-400 test-sm min-w-24 max-w-96">
             Don&apos;t have an account? Sign up
           </Link>
         </div>
