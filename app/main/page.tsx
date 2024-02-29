@@ -22,7 +22,7 @@ export default function MainPage() {
           <div>
             <Image
               className="overview-animation w-400 h-500"
-              src="/img/overview.png"
+              src="/img/overview.PNG"
               alt="Not found"
               width={1}
               height={1}

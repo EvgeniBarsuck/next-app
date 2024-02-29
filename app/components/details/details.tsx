@@ -6,7 +6,7 @@ export default function Details() {
     <div className="bg-white w-full flex flex-row justify-center text-black">
       <div className="max-w-screen-xl">
         <div className="flex flex-row ">
-          <Image src="/img/details-1.png" width={420} height={480} alt="" />
+          <Image src="/img/details-1.PNG" width={420} height={480} alt="" />
           <div>
             <h3 className="text-indigo-700 font-semibold font-sans text-3xl mb-2">
               Voluptatem dignissimos provident quasi corporis voluptates sit

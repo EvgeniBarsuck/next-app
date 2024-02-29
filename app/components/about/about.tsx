@@ -4,7 +4,7 @@ import "./about.css";
 export default function About() {
   return (
     <div className=" bg-white text-black pt-10 flex flex-row">
-      <Image src="/img/about.png" alt="" width={850} height={540} />
+      <Image src="/img/about.PNG" alt="" width={850} height={540} />
       <div className="flex flex-col p-12">
         <div>
           <h3 className="text-3xl text-indigo-900 font-bold mb-4">
