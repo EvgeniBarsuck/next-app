@@ -1,10 +1,13 @@
 import Link from "next/link";
+import Header from "./components/header/header";
+import MainPage from "./main/page";
+import './page.css'
 
 export default function Home() {
   return (
-    <main className="flex flex-row items-center justify-around p-24">
-      <Link href="auth/signin">Sign in</Link>
-      <Link href='auth/signup'>Sign up</Link>
+    <main className="relative bg-main-page-bg main">
+      <Header />
+      <MainPage />
     </main>
   );
 }

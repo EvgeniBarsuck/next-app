@@ -1,0 +1,9 @@
+.icon:before {
+    content: '\f26e';
+}
+
+.icon {
+    color: #1acc8d;
+    font-family: bootstrap-icons;
+
+}

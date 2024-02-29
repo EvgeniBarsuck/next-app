@@ -12,8 +12,25 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "main-page-bg": "url(/img/main-page-bg.jpg)",
+        "about": "url(/img/about.jpg)"
       },
     },
+    fontFamily: {
+      icons: ['boxicons']
+    },
+    width: {
+      '400': '400px',
+    },
+    height: {
+      '500': '500px'
+    },
+    borderRadius: {
+      '50':'50px'
+    },
+    minWidth: {
+      '1280': '1280px'
+    }
   },
   plugins: [],
 };

@@ -1,0 +1,13 @@
+.counts-items div {
+    width: calc(25% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+      
+}
+
+.counts-items span {
+    color: rgb(55 48 163);
+    font-weight: 700;
+    font-size: 36px;
+}
