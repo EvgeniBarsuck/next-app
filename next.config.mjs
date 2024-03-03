@@ -7,7 +7,7 @@ const nextConfig = {
   reactStrictMode: true,
   images: {
     unoptimized: true,
-    // path: isProd ? '/next-app': '', 
+    path: isProd ? '/next-app': '', 
   }, 
 };
 
