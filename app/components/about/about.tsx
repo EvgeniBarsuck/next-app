@@ -3,7 +3,7 @@ import "./about.css";
 
 export default function About() {
   return (
-    <div className=" bg-white text-black pt-10 flex flex-row">
+    <div id="about" className="bg-white text-black pt-10 flex flex-row">
       <Image src="/img/about.PNG" alt="" width={850} height={540} />
       <div className="flex flex-col p-12">
         <div>

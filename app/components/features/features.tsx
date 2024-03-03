@@ -2,7 +2,7 @@ import "./features.css";
 
 export default function Features() {
   return (
-    <section className="bg-white w-full flex flex-row justify-center">
+    <section id='features' className="bg-white w-full flex flex-row justify-center">
       <div className="w-full py-16 max-w-7xl">
         <h2 className="text-gray-500 text-sm title">FEATURES</h2>
         <p className="text-4xl text-indigo-800 font-bold font-sans pb-10">

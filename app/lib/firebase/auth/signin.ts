@@ -2,7 +2,7 @@ import { getAuth, signInWithEmailAndPassword, AuthErrorCodes } from "firebase/au
 
 import { firebaseApp } from "../firebase.app";
 import { ErrorHandler } from "../error/error-handler";
-import { ErrorBase } from "../base/error.base";
+import { ErrorBase } from "../../base/error.base";
 
 const auth = getAuth(firebaseApp);
 

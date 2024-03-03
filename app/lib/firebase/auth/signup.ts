@@ -1,7 +1,7 @@
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 import { firebaseApp } from "../firebase.app";
-import { ErrorBase } from "../base/error.base";
+import { ErrorBase } from "../../base/error.base";
 import { ErrorHandler } from "../error/error-handler";
 
 const auth = getAuth(firebaseApp);
