@@ -1,5 +1,7 @@
 import Image from "next/image";
-import './overview.css';
+import { getPath } from "@/deploy/config/add-base-path";
+
+import "./overview.css";
 
 export default function Overview() {
   return (
@@ -22,7 +24,7 @@ export default function Overview() {
           <div>
             <Image
               className="overview-animation w-400 h-500"
-              src="/img/overview.PNG"
+              src={getPath("/img/overview.png").fullPath}
               alt="Not found"
               width={1}
               height={1}

@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { getPath } from "@/deploy/config/add-base-path";
+
 import "./details.css";
 
 export default function Details() {
@@ -6,7 +8,7 @@ export default function Details() {
     <div className="bg-white w-full flex flex-row justify-center text-black py-16">
       <div className="max-w-screen-xl">
         <div className="flex flex-row ">
-          <Image src="/img/details-1.PNG" width={420} height={480} alt="" />
+          <Image src={getPath('/img/details-1.png').fullPath} width={420} height={480} alt="" />
           <div className="pl-6">
             <h3 className="text-indigo-700 font-bold font-sans text-3xl mb-2">
               Voluptatem dignissimos provident quasi corporis voluptates sit
@@ -77,10 +79,10 @@ export default function Details() {
               occaecati est nisi esse. Saepe aut dignissimos distinctio id enim.
             </p>
           </div>
-          <Image src="/img/details-2.PNG" width={420} height={480} alt="" />
+          <Image src={getPath('/img/details-2.png').fullPath} width={420} height={480} alt="" />
         </div>
         <div className="flex flex-row mt-24">
-          <Image src="/img/details-3.PNG" width={420} height={480} alt="" />
+          <Image src={getPath('/img/details-3.png').fullPath} width={420} height={480} alt="" />
           <div className="pl-6 pt-12">
             <h3 className="text-indigo-700 font-bold font-sans text-3xl mb-2">
               Sunt consequatur ad ut est nulla consectetur reiciendis animi
@@ -154,7 +156,7 @@ export default function Details() {
               </li>
             </ul>
           </div>
-          <Image src="/img/details-4.PNG" width={420} height={480} alt="" />
+          <Image src={getPath('/img/details-4.png').fullPath} width={420} height={480} alt="" />
         </div>
       </div>
     </div>

@@ -1,3 +1,5 @@
+import { getPath } from "@/deploy/config/add-base-path";
+
 import { ErrorBase } from "../base/error.base";
 
 export async function getGallery() {
@@ -27,7 +29,7 @@ export async function getGallery() {
       {
         url: "/img/gallery/gallery-8.jpg",
       },
-    ];
+    ].map((photo) => ({ ...photo, url: getPath(photo.url).fullPath }));
 
     return response;
   } catch (e: any) {
