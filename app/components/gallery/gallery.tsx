@@ -24,7 +24,7 @@ export default function Gallery() {
         <div className="w-full py-16 max-w-7xl">
           <h2 className="text-gray-500 text-sm title">GALLERY</h2>
           <p className="text-4xl text-indigo-800 font-bold font-sans pb-10">
-            CHECK OUR GALLERY
+            CHECK OUR GALLERY 
           </p>
         </div>
         <ul className="flex flex-row flex-wrap">
