@@ -4,7 +4,7 @@ import './header.css';
 export default function Header() {
   return (
     <div id="home" className="w-full flex flex-row justify-center pb-10">
-      <div className="flex flex-row justify-between z-10 relative max-w-7xl w-full h-20">
+      <div className="flex flex-row justify-between width-full h-20 z-10 relative max-w-7xl">
         <div className="flex flex-col items-center justify-center">
           <span className="text-3xl font-bold">Bootslander</span>
         </div>
