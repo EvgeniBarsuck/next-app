@@ -22,7 +22,7 @@ export default function About() {
         <ul>
           <li>
             <div className="flex flex-row justify-start mt-10 items-center">
-              <div className="rounded-50 w-16 h-16 border-2 border-solid border-green-600">
+              <div className="border-radius-50 w-16 h-16 border-2 border-solid border-green-600">
                 <i className="fingerprint flex justify-center items-center h-full bx bx-fingerprint text-3xl"></i>
               </div>
               <div className="ml-6 min-w-7xl">
@@ -36,7 +36,7 @@ export default function About() {
           </li>
           <li>
             <div className="flex flex-row justify-start mt-10 items-center">
-              <div className="rounded-50 w-16 h-16 border-2 border-solid border-green-600">
+              <div className="border-radius-50 w-16 h-16 border-2 border-solid border-green-600">
                 <i className="fingerprint flex justify-center items-center h-full bx bx-gift text-3xl"></i>
               </div>
               <div className="ml-6 min-w-7xl">
@@ -50,7 +50,7 @@ export default function About() {
           </li>
           <li>
             <div className="flex flex-row justify-start mt-10 items-center">
-              <div className="rounded-50 w-16 h-16 border-2 border-solid border-green-600">
+              <div className="border-radius-50 w-16 h-16 border-2 border-solid border-green-600">
                 <i className="fingerprint flex justify-center items-center h-full bx bx-atom text-3xl"></i>
               </div>
               <div className="ml-6 min-w-7xl">

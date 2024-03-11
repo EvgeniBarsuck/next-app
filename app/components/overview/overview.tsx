@@ -16,7 +16,7 @@ export default function Overview() {
               <p className="text-2xl text-wrap mb-10">
                 We are team of talented designers making websites with Bootstrap
               </p>
-              <button className="bg-green-500 rounded-50 w-40 h-9">
+              <button className="bg-green-500 border-radius-50 w-40 h-9">
                 Get Started
               </button>
             </div>

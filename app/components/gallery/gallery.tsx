@@ -20,18 +20,18 @@ export default function Gallery() {
       id="features"
       className="bg-white w-full flex flex-row justify-center"
     >
-      <div>
-        <div className="w-full py-16 max-w-7xl">
+      <div className="max-w-7xl">
+        <div className="w-full py-12 ">
           <h2 className="text-gray-500 text-sm title">GALLERY</h2>
           <p className="text-4xl text-indigo-800 font-bold font-sans pb-10">
             CHECK OUR GALLERY 
           </p>
         </div>
-        <ul className="flex flex-row flex-wrap">
+        <ul className="flex flex-row flex-wrap mb-16">
           {data
             ? (data as { url: string }[]).map((photo, key) => (
-                <li key={key} className="w-1/4">
-                  <Image src={photo.url} height={320} width={250} alt="" />
+                <li key={key} className="w-1/4 pr-1 pb-1">
+                  <Image src={photo.url} height={250} width={320} alt="" />
                 </li>
               ))
             : null}
