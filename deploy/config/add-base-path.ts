@@ -1,4 +1,5 @@
-const basePath = process.env.BASE_PATH;
+const basePath = 'next-app';
+console.log("🚀 ~ basePath:", basePath)
 
 export const getPath = (mainPath: string) => {
   console.log("🚀 ~ getPath ~ process.env.NODE_ENV:", process.env.NODE_ENV)
