@@ -1,5 +1,5 @@
 const basePath = process.env.BASE_PATH;
-console.log("🚀 ~ basePath:", basePath, process.env.NODE_ENV)
+console.log("🚀 ~ basePath:", basePath, process.env.NODE_ENV);
 
 export const getPath = (mainPath: string) => {
   if (process.env.NODE_ENV === "development") {
@@ -7,11 +7,11 @@ export const getPath = (mainPath: string) => {
 
     return {
       fullPath,
-      basePath: '',
+      basePath: "",
     };
   }
 
-  const fullPath = `${basePath}${mainPath}`;
+  const fullPath = basePath + mainPath;
 
   return {
     fullPath,
