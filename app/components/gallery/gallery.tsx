@@ -1,15 +1,18 @@
-'use client'
+"use client";
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
 export default function Gallery() {
   const [data, setData] = useState(null);
-  
+
   useEffect(() => {
     fetch("/api/gallery")
-    .then((response) => response.json())
-    .then((responseInJson) =>{ console.log(responseInJson); setData(responseInJson.data)});
+      .then((response) => response.json())
+      .then((responseInJson) => {
+        console.log(responseInJson);
+        setData(responseInJson.data);
+      });
   }, []);
 
   return (
@@ -25,11 +28,13 @@ export default function Gallery() {
           </p>
         </div>
         <ul className="flex flex-row flex-wrap">
-          {data ? (data as { url: string }[]).map((photo, key) => (
-            <li key={key} className="w-1/4">
-              <Image src={photo.url} height={320} width={250} alt=""/>
-            </li>
-          )) : null}
+          {data
+            ? (data as { url: string }[]).map((photo, key) => (
+                <li key={key} className="w-1/4">
+                  <Image src={photo.url} height={320} width={250} alt="" />
+                </li>
+              ))
+            : null}
         </ul>
       </div>
     </section>
